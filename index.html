@@ -13,7 +13,7 @@ button:active{transform:scale(.94)}
 button:disabled{opacity:.45;pointer-events:none}
 /* carga */
 #ld{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;background:linear-gradient(#1b1450,#0d0b1e);border-radius:0 0 50% 50%/0 0 70px 70px;box-shadow:0 24px 70px #000b;transition:transform 1.2s cubic-bezier(.77,0,.18,1);will-change:transform}
-#ld.up{transform:translateY(-112%)}
+#ld.up{transform:translateY(-112%);pointer-events:none}
 .sp{position:relative;width:130px;height:130px;border-radius:50%;border:6px solid #fff3;background:repeating-conic-gradient(#ff4d6d 0 45deg,#ffc83d 0 90deg,#38bdf8 0 135deg,#7c5cff 0 180deg);box-shadow:0 0 50px #7c5cff88;animation:rot 1.1s linear infinite;will-change:transform}
 .sp:after{content:"";position:absolute;inset:36%;border-radius:50%;background:var(--bg);border:4px solid var(--g)}
 @keyframes rot{to{transform:rotate(1turn)}}
@@ -21,7 +21,7 @@ button:disabled{opacity:.45;pointer-events:none}
 .br{width:min(240px,70vw);height:8px;border-radius:8px;background:#ffffff1a;overflow:hidden}
 .br i{display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,#7c5cff,#ff4d9d,#ffc83d)}
 /* app */
-#app{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:max(14px,env(safe-area-inset-top)) 14px max(14px,env(safe-area-inset-bottom));opacity:0;transform:scale(.95);transition:opacity .9s .55s,transform 1s .55s cubic-bezier(.2,.8,.2,1)}
+#app{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:max(14px,env(safe-area-inset-top)) 14px max(14px,env(safe-area-inset-bottom));opacity:0;transform:scale(.95);transition:opacity .9s .55s,transform 1s .55s cubic-bezier(.2,.8,.2,1)}
 body.ok #app{opacity:1;transform:none}
 h1{font-size:20px;letter-spacing:3px;opacity:.85}
 #wb{position:relative;width:var(--S,300px);height:var(--S,300px)}
@@ -150,7 +150,7 @@ label.ch{padding:8px 12px;cursor:pointer}label.ch input{accent-color:#7c5cff;mar
 <section class="sh" id="sC">
  <h2>Ajustes <button class="x">✕</button></h2>
  <div class="lb">Modo del resultado</div>
- <div class="r" id="resultModes"><button type="button" class="sm on" id="modeNormal" aria-pressed="true">Normal</button><button type="button" class="sm" id="modeKeep" aria-pressed="false">Mantener</button></div>
+ <div class="r" id="settingsResultModes"><button type="button" class="sm on" id="settingsModeNormal" aria-pressed="true">Normal</button><button type="button" class="sm" id="settingsModeKeep" aria-pressed="false">Mantener</button></div>
  <div class="lb">Tiempo que el nombre queda en pantalla (modo Normal)</div>
  <div class="r"><input class="in" id="sS" type="number" inputmode="decimal" min="1" step="any" value="5"><select class="in" id="sU"><option value="s">segundos</option><option value="m">minutos</option></select></div>
  <div class="lb">Duración del giro (segundos)</div>
@@ -672,6 +672,11 @@ $('#bE').innerHTML=EYE[0];ownerUI();apply();
 $('#go').onclick=spin;
 $('#modeNormal').onclick=()=>{resultMode='normal';$('#modeNormal').classList.add('on');$('#modeKeep').classList.remove('on');$('#modeNormal').setAttribute('aria-pressed','true');$('#modeKeep').setAttribute('aria-pressed','false');$('#winnerStatus').hidden=true;$('#winnerStatus').textContent=''};
 $('#modeKeep').onclick=()=>{resultMode='keep';$('#modeKeep').classList.add('on');$('#modeNormal').classList.remove('on');$('#modeKeep').setAttribute('aria-pressed','true');$('#modeNormal').setAttribute('aria-pressed','false')};
+function syncResultModes(){[['modeNormal','modeKeep'],['settingsModeNormal','settingsModeKeep']].forEach(([n,k])=>{const a=$('#'+n),b=$('#'+k);if(!a||!b)return;a.classList.toggle('on',resultMode==='normal');b.classList.toggle('on',resultMode==='keep');a.setAttribute('aria-pressed',String(resultMode==='normal'));b.setAttribute('aria-pressed',String(resultMode==='keep'))})}
+$('#settingsModeNormal').onclick=()=>{resultMode='normal';syncResultModes();$('#winnerStatus').hidden=true;$('#winnerStatus').textContent=''};
+$('#settingsModeKeep').onclick=()=>{resultMode='keep';syncResultModes()};
+$('#modeNormal').onclick=()=>{resultMode='normal';syncResultModes();$('#winnerStatus').hidden=true;$('#winnerStatus').textContent=''};
+$('#modeKeep').onclick=()=>{resultMode='keep';syncResultModes()};
 addEventListener('resize',()=>{draw();size()});
 draw();list();size();
 </script></body></html>
