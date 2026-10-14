@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="utf-8">
+<html lang="es"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="connect-src 'self'"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#0d0b1e">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Ruleta</title>
 <style>
@@ -114,20 +114,82 @@ label.ch{padding:8px 12px;cursor:pointer}label.ch input{accent-color:#7c5cff;mar
 #wb.hw #hb{background:radial-gradient(circle at 35% 30%,#555,#111);box-shadow:0 0 0 5px #ff7a00,0 0 26px #ff7a00}
 #wb.hw #hb:after{content:"💀";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:calc(var(--S) * .075)}
 #wb.hw:after{content:"🕸️ 🦇";position:absolute;left:-12px;top:-14px;font-size:38px;z-index:3;pointer-events:none;filter:drop-shadow(0 0 6px #ff7a00)}
-#uB,#qL{display:flex;flex-direction:column;gap:10px}</style></head><body>
+#uB,#qL{display:flex;flex-direction:column;gap:10px}
+/* ===== pulido ===== */
+:root{--g:#ffd479;--c:rgba(255,255,255,.07);--line:rgba(255,255,255,.14);--ease:cubic-bezier(.22,.9,.24,1)}
+html,body{font-family:ui-rounded,"SF Pro Rounded","Segoe UI Variable",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:500;-webkit-font-smoothing:antialiased}
+button{transition:transform .35s var(--ease),box-shadow .35s,background .3s,filter .3s,opacity .3s}
+#ld{gap:28px;background:radial-gradient(700px 520px at 50% 38%,#2a1f6b,#0d0b1e 72%);border-radius:0;box-shadow:none;transition:opacity 1s ease,transform 1.2s var(--ease),visibility 0s 1.1s}
+#ld.up{transform:scale(1.05);opacity:0;visibility:hidden}
+.sp{width:92px;height:92px;border:0;background:conic-gradient(#ffd479,#ff5fa8,#8b6bff,#38bdf8,#ffd479);box-shadow:none;-webkit-mask:radial-gradient(circle,#0000 58%,#000 60%);mask:radial-gradient(circle,#0000 58%,#000 60%);animation:rot 2.2s linear infinite}
+.sp:after{display:none}
+.lt{font-size:15px;font-weight:300;letter-spacing:.9em;text-indent:.9em;color:#fffc}
+.br{width:min(200px,56vw);height:2px;border-radius:2px;background:#ffffff18}
+.br i{width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#8b6bff,#ff5fa8,#ffd479);box-shadow:0 0 14px #ff5fa8aa}
+.pc{font-size:13px;font-weight:300;letter-spacing:.2em;color:#fff9}
+.sm,#cp,#ck,.it,.ch{background:var(--c);border:1px solid var(--line);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);box-shadow:inset 0 1px 0 #ffffff1f,0 6px 20px #0003}
+.sm{font-size:14px}
+.sm:hover,.it:hover{background:#ffffff14;transform:translateY(-1px)}
+#cp{padding:8px 18px 8px 12px}
+#go{padding:17px 64px;font-size:20px;font-weight:700;letter-spacing:6px;text-indent:6px;background:linear-gradient(135deg,#8b6bff,#ff5fa8);box-shadow:inset 0 1px 0 #fff5,0 10px 36px #8b6bff66;animation:bre 3.2s ease-in-out infinite}
+#go.run,#go:disabled{animation:none}
+@keyframes bre{50%{box-shadow:inset 0 1px 0 #fff5,0 12px 54px #ff5fa899}}
+#wh{box-shadow:0 0 0 1px #ffffff26,0 0 0 8px #ffffff0d,0 24px 80px #7c5cff55}
+.sh{background:rgba(22,18,52,.78);backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);border:1px solid var(--line);border-bottom:0;border-radius:30px 30px 0 0;box-shadow:0 -20px 70px #0008;padding-top:28px;transition:transform .7s var(--ease)}
+.sh:before{content:"";position:absolute;top:10px;left:50%;width:38px;height:4px;margin-left:-19px;border-radius:4px;background:#ffffff33}
+.sh h2{font-size:19px;font-weight:700}
+.in{background:#ffffff0d;border:1px solid var(--line);border-radius:16px}
+.in:focus{border-color:#a592ff;box-shadow:0 0 0 4px #7c5cff3d}
+.ok2,#ok{background:linear-gradient(135deg,#8b6bff,#ff5fa8);box-shadow:inset 0 1px 0 #fff4,0 8px 24px #8b6bff55;border-radius:16px}
+.it>button.e{background:linear-gradient(135deg,#22c55e,#84cc16)}
+#bd{background:#04020f99;backdrop-filter:blur(8px);transition:opacity .5s}
+#ts{background:rgba(20,16,46,.84);backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:0 12px 40px #0006;font-size:14px}
+#app{gap:24px;transition:opacity 1s .3s,transform 1.1s .3s var(--ease)}
+body.ok #app .r>*,body.ok #tb>*{animation:rise .8s var(--ease) backwards}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+#app .r>:nth-child(2){animation-delay:.07s}#app .r>:nth-child(3){animation-delay:.14s}
+#lkz{position:fixed;inset:0;z-index:49;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;padding:24px;background:radial-gradient(700px 520px at 50% 30%,#2a1f6b,#0d0b1e 75%);opacity:0;transition:opacity .5s}
+#lkz.on{opacity:1}#lkz .in,#lkz .ok2{width:100%;max-width:320px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-<div id="ld"><div class="sp"></div><div class="pc"><span id="pc">0</span>%</div><div class="br"><i id="bar"></i></div></div>
+#cp{padding:6px 6px 6px 14px}
+a.ok2{display:block;text-align:center;text-decoration:none;color:#fff;padding:14px;font-weight:800}
+.pay{display:flex;align-items:center;gap:10px}.pay span{color:var(--m);font-size:13px;min-width:96px}.pay b{flex:1;font-size:17px;letter-spacing:.5px}.pay .sm{padding:7px 14px}
+.warn{border-color:#ffd47999;background:#ffd4791a;line-height:1.45;font-size:14px}
+#lkz{overflow:auto;justify-content:safe center}
 
+/* v3: rendimiento (sin desenfoques pesados) */
+.sm,#cp,#ck,.it,.ch,#ts,.sh,#bd,#wo,#nv{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.sh{background:#171335f5!important}.sm,#cp,#ck,.it,.ch{background:#ffffff14}
+#go{animation:none!important}
+/* carga: ruleta */
+.sp{width:112px;height:112px;border-radius:50%;background:repeating-conic-gradient(#ff4d6d 0 30deg,#ffc83d 0 60deg,#38bdf8 0 90deg,#7c5cff 0 120deg);-webkit-mask:none;mask:none;animation:none;box-shadow:0 0 0 5px #ffffff2e,0 0 44px #7c5cff77}
+.sp:after{display:block}
+/* fondo que se mueve */
+body{background:none!important}
+#bga{position:fixed;inset:-22%;z-index:-1;pointer-events:none;will-change:transform;animation:bgf 24s ease-in-out infinite alternate}
+@keyframes bgf{to{transform:translate3d(5%,4%,0) rotate(7deg) scale(1.22)}}
+/* flecha, centro, nombre sin cuadro */
+#pe{position:absolute;left:50%;top:-46px;transform:translateX(-50%);font-size:24px;z-index:4;pointer-events:none}
+#hb:after{content:var(--he,"");position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:calc(var(--S)*.075)}
+#wc{box-shadow:none!important;border-radius:0!important}
+#sP .tabs{flex-wrap:wrap}#sP .tabs .sm{flex:1 1 30%;font-size:13px}
+#bl{display:flex;flex-direction:column;gap:10px}#rc{margin-top:6px}
+</style></head><body>
+
+<div id="ld"><div class="sp"></div><div class="lt">RULETA</div><div class="br"><i id="bar"></i></div><div class="pc"><span id="pc">0</span>%</div></div>
+
+<div id="bga" hidden></div>
 <main id="app">
- <div id="tb"><div id="cp"><span id="cI"></span><b id="cN">0</b><button id="cP">＋</button></div><div class="r"><button class="sm" id="bR">🏆</button><button class="sm" id="bE" aria-label="Ocultar botones"></button><button class="sm" id="bT"><span id="tI">🏪</span> Tienda</button></div></div>
+ <div id="tb"><div id="cp"><span id="cI"></span><b id="cN">0</b><button id="cP">＋</button></div><div class="r"><button class="sm" id="bE" aria-label="Ocultar botones"></button><button class="sm" id="bT"><span id="tI">🏪</span> Tienda</button></div></div>
  <div id="ck">⏱ <span id="cT">0:00</span> <small>→ +50 🪙</small></div>
  <div id="an" hidden></div>
  <div id="wb">
   <svg id="pt" viewBox="0 0 38 46"><path d="M19 45 3 15Q-1 3 11 2h16q12 1 8 13z" fill="#ffc83d" stroke="#fff" stroke-width="2.5"/></svg>
-  <canvas id="wh"></canvas><div id="hb"></div>
+  <canvas id="wh"></canvas><span id="pe"></span><div id="hb"></div>
  </div>
  <div id="bt"><button id="go"><span>GIRAR</span></button></div>
- <div class="r"><button class="sm" id="bS"><span id="gI">⚙️</span> Ajustes</button><button class="sm" id="bM">＋ Más</button><button class="sm" id="bJ">🎁 Canje</button><button class="sm" id="bA" hidden>📢 Anuncio</button><button class="sm" id="bU">👤 Entrar</button><button class="sm" id="bQ">🔍 Buscar</button></div>
+ <div class="r"><button class="sm" id="bS"><span id="gI">⚙️</span> Ajustes</button><button class="sm" id="bM">＋ Más</button><button class="sm" id="bB">🔎 Buscar</button><button class="sm" id="bU">👤 Entrar</button></div>
 </main>
 
 <div id="bd"></div>
@@ -150,36 +212,40 @@ label.ch{padding:8px 12px;cursor:pointer}label.ch input{accent-color:#7c5cff;mar
  <input class="in" id="sT" type="number" inputmode="decimal" min="1" max="120" step="any" value="6">
  <div class="lb">Cuando se acaba el tiempo</div>
  <select class="in" id="sE"><option value="f">Desvanecerse lentamente</option><option value="b">Romperse y caer</option><option value="s">Romperse en pedacitos</option><option value="h">Esfumarse (humo)</option><option value="q">Quemarse con monedas</option><option value="r">Aleatorio</option></select>
- <div class="lb">Tu nombre en calificaciones</div><input class="in" id="sN" maxlength="16" autocomplete="off">
+ <div class="lb">Cuando sale un nombre</div><select class="in" id="kp"><option value="0">Normal (se quita de la ruleta)</option><option value="1">Mantener (se queda en la ruleta)</option></select>
+ <div class="lb">Tu nombre</div><input class="in" id="sN" maxlength="16" autocomplete="off">
 </section>
 
 <section class="sh" id="sP"><h2>Tienda <button class="x">✕</button></h2>
- <div class="r tabs"><button class="sm on" data-t="r">Skin ruleta</button><button class="sm" data-t="f">Skin fondo</button><button class="sm" data-t="d">Decoración</button></div>
+ <div class="r tabs"><button class="sm on" data-t="r">Skin ruleta</button><button class="sm" data-t="f">Skin fondo</button><button class="sm" data-t="d">Decoración</button><button class="sm" data-t="p">Flecha</button><button class="sm" data-t="c">Centro</button></div>
  <div id="gr"></div></section>
-<section class="sh" id="sK"><h2>Paquetes de monedas <button class="x">✕</button></h2><div id="pk"></div></section>
-<section class="sh" id="sZ"><h2>Acceso <button class="x">✕</button></h2><input class="in" id="zC" type="password" placeholder="Código" autocomplete="off"><button id="zK" class="ok2">Entrar</button></section>
-<section class="sh" id="sY"><h2>Anuncio <button class="x">✕</button></h2><textarea class="in" id="aT" rows="3" maxlength="300" placeholder="Texto (opcional)"></textarea><div class="r"><button class="sm" id="aF">🖼️ Foto (opcional)</button><span class="lb" id="aN"></span></div><button id="aP" class="ok2">Publicar para todos</button><button id="aQ" class="sm">Quitar anuncio</button><button id="aH" class="sm"></button><button id="aS" class="sm">Salir del modo dueño</button></section><input type="file" id="aI" hidden accept="image/*">
+<section class="sh" id="sK"><h2>Paquetes de monedas <button class="x">✕</button></h2><div id="pk"></div><div id="rc"><button class="sm" id="rB" style="width:100%">🎁 Canjear código de regalo</button></div></section>
+
+
 <input type="file" id="pF" hidden accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/heic,image/heif"><input type="file" id="pV" hidden accept="video/*">
-<video id="bgv" muted loop playsinline></video><button id="hz" tabindex="-1" aria-hidden="true"></button>
+<video id="bgv" muted loop playsinline></video>
 <section class="sh" id="sQ"><h2><span id="tH">Transferencia</span> <button class="x">✕</button></h2><div id="tB"></div></section>
-<section class="sh" id="sJ"><h2>🎁 Canje de regalo <button class="x">✕</button></h2><input class="in" id="jC" placeholder="Pega tu código" autocomplete="off"><button id="jK" class="ok2">Canjear</button><div id="jR" class="lb"></div></section>
-<section class="sh" id="sL"><h2>🏆 Calificaciones <button class="x">✕</button></h2><div class="r tabs2" id="lT"><button class="sm on" data-k="c">🪙 Monedas</button><button class="sm" data-k="t">⏱ Tiempo</button><button class="sm" data-k="g">🎡 Giros</button></div><div class="lb" id="lS"></div><div class="lb" id="lU"></div><div id="lL"></div></section>
+
+
 <section class="sh" id="sO"><h2>¿Qué botones ocultar? <button class="x">✕</button></h2><div id="eL"></div><button id="eK" class="ok2">Ocultar</button></section>
-<section class="sh" id="sU2"><h2><span id="uH">Cuenta</span> <button class="x">✕</button></h2><div id="uB"></div></section><section class="sh" id="sB"><h2>🔍 Buscar personas <button class="x">✕</button></h2><input class="in" id="qI" placeholder="Nombre de perfil…" autocomplete="off"><div id="qL"></div></section><input type="file" id="uF" hidden accept="image/*"><div id="nv"><div id="nc"><img id="ni" hidden alt=""><p id="nt" hidden></p><button id="nk" class="ok2">Entendido</button></div></div>
+<section class="sh" id="sU2"><h2><span id="uH">Cuenta</span> <button class="x">✕</button></h2><div id="uB"></div></section><input type="file" id="uF" hidden accept="image/*">
+<section class="sh" id="sB"><h2>Buscar y regalar <button class="x">✕</button></h2><input class="in" id="bq" placeholder="Escribe un nombre (ej. A)" maxlength="16" autocomplete="off"><div id="bl"></div></section>
 <div id="wo"><canvas id="wc"></canvas></div>
-<canvas id="fx"></canvas><div id="ts"></div>
+<button id="hz" aria-hidden="true" tabindex="-1"></button><canvas id="fx"></canvas><div id="ts"></div>
 
 <script>
+
 const $=s=>document.querySelector(s),TAU=Math.PI*2,wh=$('#wh'),fx=$('#fx'),fc=fx.getContext('2d');
-const dpr=()=>Math.min(devicePixelRatio||1,3),sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const dpr=()=>Math.min(devicePixelRatio||1,2),sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let items=[],angle=0,busy=false,uid=0,file=null;
 ['David','María','Carlos','Ana','Luis','Sofía'].forEach(n=>items.push({id:++uid,name:n}));
 
-/* ---- carga 0 → 100 % ---- */
-let p=0,pl=performance.now();
-(function L(t){const dt=Math.min(50,t-pl);pl=t;p=Math.min(100,p+(Math.random()*.8+.12)*dt/16);
- $('#pc').textContent=Math.floor(p);$('#bar').style.width=p+'%';
- p<100?requestAnimationFrame(L):setTimeout(()=>{$('#ld').classList.add('up');document.body.classList.add('ok')},500)})(pl);
+/* ---- carga suave ---- */
+(function(){const pc=$('#pc'),bar=$('#bar'),sp=document.querySelector('.sp');let p=0,a=0,v=1,tg=1,nt=0,l=performance.now();
+ (function L(t){const dt=Math.min(50,t-l);l=t;if(t>nt){tg=[.25,.5,1,1.6,2.6,3.4][Math.random()*6|0];nt=t+250+Math.random()*450}
+  v+=(tg-v)*Math.min(1,dt/120);a+=v*dt*.3;p=Math.min(100,p+v*dt*.024);
+  sp.style.transform='rotate('+a+'deg)';pc.textContent=p|0;bar.style.transform='scaleX('+p/100+')';
+  p<100?requestAnimationFrame(L):setTimeout(()=>{$('#ld').classList.add('up');document.body.classList.add('ok')},350)})(l)})();
 
 /* ---- dibujar ruleta ---- */
 function draw(){
@@ -215,8 +281,8 @@ async function spin(){
  const delta=((base-cur)%TAU+TAU)%TAU+Math.max(4,Math.round(sp*1.3))*TAU,a0=angle,t0=performance.now();
  await new Promise(r=>{(function f(t){const k=Math.min(1,Math.max(0,(t-t0)/(sp*1000)));
   angle=a0+delta*(1-Math.pow(1-k,4));wh.style.transform=`rotate(${angle}rad)`;pegs(angle,seg);k<1?requestAnimationFrame(f):r()})(t0)});
- const w=items.splice(i,1)[0];draw();list();
- await reveal(w);earn(Math.max(.5,+$('#sS').value||5)*($('#sU').value==='m'?60:1));busy=false;batt(0);list();
+ const w=st.keep?items[i]:items.splice(i,1)[0];draw();list();
+ await reveal(w);busy=false;batt(0);list();
 }
 
 /* ---- tarjeta del ganador ---- */
@@ -224,13 +290,13 @@ function card(w){
  const W=Math.min(innerWidth*.86,520),H=w.img?(w.name?W*1.02:W*.74):W*.46,d=dpr(),c=$('#wc'),x=c.getContext('2d');
  c.width=W*d;c.height=H*d;c.style.width=W+'px';c.style.height=H+'px';x.scale(d,d);
  const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#3b2a8f');g.addColorStop(1,'#a02a86');
- x.fillStyle=g;x.beginPath();x.roundRect(3,3,W-6,H-6,28);x.fill();x.lineWidth=4;x.strokeStyle='#ffc83d';x.stroke();
+ 
  let ty=H/2;
  if(w.img){const r=W*.27,cy=r+W*.1;x.save();x.beginPath();x.arc(W/2,cy,r,0,TAU);x.clip();x.drawImage(w.img,W/2-r,cy-r,r*2,r*2);x.restore();
   x.lineWidth=5;x.strokeStyle='#ffc83d';x.beginPath();x.arc(W/2,cy,r,0,TAU);x.stroke();ty=cy+r+(H-cy-r)/2}
  if(w.name){let f=W*.12;x.font=`800 ${f}px system-ui,sans-serif`;const m=x.measureText(w.name).width,mw=W*.86;
   if(m>mw){f*=mw/m;x.font=`800 ${f}px system-ui,sans-serif`}
-  x.fillStyle='#fff';x.textAlign='center';x.textBaseline='middle';x.shadowColor='#0008';x.shadowBlur=8;x.fillText(w.name,W/2,ty)}
+  x.fillStyle='#fff';x.textAlign='center';x.textBaseline='middle';x.shadowColor='#000c';x.shadowBlur=18;x.fillText(w.name,W/2,ty)}
 }
 async function reveal(w){
  const wo=$('#wo'),wc=$('#wc');wc.style.cssText='';card(w);wo.classList.add('on');
@@ -248,7 +314,7 @@ async function reveal(w){
 let P=[],Sh=[],run=false,lt=0;
 function size(){const d=dpr();fx.width=innerWidth*d;fx.height=innerHeight*d;fc.setTransform(d,0,0,d,0,0)}
 function go(){if(!run){run=true;lt=performance.now();requestAnimationFrame(loop)}}
-function burst(x,y,k){for(let i=0;i<170*k;i++){const a=Math.random()*TAU,v=Math.sqrt(Math.random())*(.25+Math.random()*.8)*k,l=700+Math.random()*1200;
+function burst(x,y,k){return;for(let i=0;i<170*k;i++){const a=Math.random()*TAU,v=Math.sqrt(Math.random())*(.25+Math.random()*.8)*k,l=700+Math.random()*1200;
  P.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-.15,l,m:l,s:1+Math.random()*2.6,c:`hsl(${35+Math.random()*30} 100% ${60+Math.random()*30}%)`})}go()}
 function shatter(c,cols=9){const b=c.getBoundingClientRect(),rows=Math.max(3,Math.round(cols*b.height/b.width)),
  tw=c.width/cols,th=c.height/rows,w=b.width/cols,h=b.height/rows;
@@ -311,7 +377,7 @@ let st={coins:500,own:{},rs:0,bg:0,dc:'',ph:'',an:''},PH=null,tab='r';
 try{Object.assign(st,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch{}
 if(st.bg==='v')st.bg=0;if(st.rs==='f'&&!st.ph)st.rs=0;
 if(st.ph){const im=new Image();im.onload=()=>{PH=im;draw()};im.src=st.ph}
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch{}};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch{}typeof push==='function'&&push()};
 const COIN='<svg viewBox="0 0 32 32" width="24" height="24"><circle cx="16" cy="16" r="15" fill="#e0a100"/><circle cx="16" cy="16" r="12.5" fill="#ffd23f" stroke="#b97d00" stroke-width="1.5"/><path d="M16 8l2.4 5 5.4.7-4 3.7 1 5.4-4.8-2.6-4.8 2.6 1-5.4-4-3.7 5.4-.7z" fill="#fff3b0"/></svg>';
 const CI=IMG.moneda?`<img src="${IMG.moneda}" height="24">`:COIN;
 $('#cI').innerHTML=CI;
@@ -336,8 +402,7 @@ function segColor(i,n,k=st.rs){
  const q=Array.isArray(s)?s:[`hsl(${s} 75% 50%)`,`hsl(${s+25} 70% 38%)`,`hsl(${s-20} 80% 60%)`,`hsl(${s+10} 55% 28%)`];
  let j=i%q.length;if(n>1&&i===n-1&&j===0)j=1;return q[j]}
 
-function coins(){$('#cN').textContent=fmt(st.coins);save();sy()}
-function earn(sec){const g=Math.max(1,Math.round(sec*50/60));st.coins+=g;coins();toast('+'+g+' monedas 🪙')}
+function coins(){$('#cN').textContent=fmt(st.coins);save()}
 function batt(on){const g=$('#go');
  if(on){g.style.setProperty('--d',Math.min(120,Math.max(1,+$('#sT').value||6))+'s');g.classList.add('run');void g.offsetWidth;g.style.setProperty('--f',1)}
  else{g.style.setProperty('--d','.5s');g.style.setProperty('--f',0);g.classList.remove('run')}}
@@ -350,21 +415,23 @@ function apply(){const w=$('#wb'),v=st.bg==='v',b=$('#bgv'),d=DC.find(x=>x[0]===
 function list2(){
  if(tab==='r')return WS.map((w,i)=>['r'+i,w[0],w[1],cg([0,1,2,3,4,5].map(j=>segColor(j,6,i))),st.rs===i,i]).concat([['rf','Tu foto de ruleta',50000,st.ph?`url(${st.ph})`:'#2a2450',st.rs==='f','f']]);
  if(tab==='f')return BG.map((b,i)=>['b'+i,b[0],b[1],bgc(b[2],b[3]),st.bg===i,i]).concat([['bv','Tu video de fondo',50000,'linear-gradient(135deg,#111,#555)',st.bg==='v','v']]);
- return DC.map(d=>['d'+d[0],d[1],d[2],`radial-gradient(circle,#171335 38%,transparent 40%),conic-gradient(${d[3]})`,st.dc===d[0],d[0]])}
+ if(tab==='p'||tab==='c')return xl();return DC.map(d=>['d'+d[0],d[1],d[2],`radial-gradient(circle,#171335 38%,transparent 40%),conic-gradient(${d[3]})`,st.dc===d[0],d[0]])}
 function shop(){const g=$('#gr');g.innerHTML='';
  list2().forEach(([k,nm,pr,pv,eq,v])=>{
   const d=document.createElement('div'),own=st.own[k]||pr===0,sp=k==='rf'||k==='bv',b=document.createElement('button');d.className='it';
   d.innerHTML=`<div class="pv" style="background:${pv}"></div><div>${nm}</div>`;
-  if(own){b.textContent=sp?(eq?'Cambiar ':'Elegir ')+(k==='rf'?'foto':'video'):eq?(tab==='d'?'Quitar':tab==='r'&&WS[v][2]==='ra'?(st.rm?'▶ Encender movimiento':'⏸ Apagar movimiento'):'En uso ✓'):'Usar';b.className=eq&&!sp?'e':'u'}
+  if(own){b.textContent=sp?(eq?'Cambiar ':'Elegir ')+(k==='rf'?'foto':'video'):eq?(tab!=='r'&&tab!=='f'?'Quitar':tab==='r'&&WS[v][2]==='ra'?(st.rm?'▶ Encender movimiento':'⏸ Apagar movimiento'):'En uso ✓'):'Usar';b.className=eq&&!sp?'e':'u'}
   else b.innerHTML=CI+fmt(pr);
-  b.onclick=()=>{
-   if(!own){if(st.coins<pr)return toast('Te faltan '+fmt(pr-st.coins)+' monedas');st.coins-=pr;st.own[k]=1;coins();toast('¡Comprado!')}
+  b.onclick=async()=>{
+   if(!own){if(!acct)return need('Para comprar necesitas una cuenta (es gratis).');if(st.coins<pr)return toast('Te faltan '+fmt(pr-st.coins)+' monedas');
+    st.coins-=pr;
+    st.own[k]=1;coins();toast('¡Comprado!')}
    if(sp)return $(k==='rf'?'#pF':'#pV').click();
-   if(tab==='r'){if(st.rs===v&&WS[v][2]==='ra')st.rm=!st.rm;else st.rs=v}else if(tab==='f')st.bg=v;else st.dc=st.dc===v?'':v;
+   if(tab==='r'){if(st.rs===v&&WS[v][2]==='ra')st.rm=!st.rm;else st.rs=v}else if(tab==='f')st.bg=v;else if(tab==='d')st.dc=st.dc===v?'':v;else{const f=v.slice(0,2),i=+v.slice(2);st[f]=st[f]===i?'':i}
    save();apply();shop()};
   d.append(b);g.append(d)})}
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));shop()});
-$('#bT').onclick=()=>{shop();open('#sP')};$('#cP').onclick=()=>open('#sK');
+$('#bT').onclick=()=>{shop();open('#sP')};$('#cP').onclick=()=>{if(!acct&&!OWN)return need('Para recargar monedas necesitas una cuenta (es gratis).');packs();open('#sK')};
 
 /* foto de ruleta y video de fondo (cualquiera) */
 async function photo(f,z){const u=URL.createObjectURL(f),im=new Image();im.src=u;
@@ -378,32 +445,13 @@ $('#pV').onchange=e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
  if(!f.type.startsWith('video/'))return toast('Solo se permiten videos');
  $('#bgv').src=URL.createObjectURL(f);st.bg='v';save();apply();shop()};
 
-/* paquetes de monedas */
-[500,1500,5000,10000,50000].forEach(n=>{const b=document.createElement('button');b.className='it';
- b.innerHTML=`<span style="font-size:26px">${CI}</span><b>${fmt(n)}</b><small class="lb">monedas</small>`;
- b.onclick=()=>{st.coins+=n;coins();toast('+'+fmt(n)+' monedas 🪙')};$('#pk').append(b)});
 
-/* anuncio (solo con código) */
-function banner(){$('#an').hidden=!st.an;$('#an').textContent=st.an?'📢 '+st.an:''}
-function unlock(){const z=$('#zC');
- if(hs('rl|'+z.value.trim())===CH){z.value='';$('#aT').value=st.an||'';open('#sY')}
- else{toast('Código incorrecto');z.classList.remove('shk');void z.offsetWidth;z.classList.add('shk')}}
-$('#hz').onclick=()=>open('#sZ');$('#zK').onclick=unlock;$('#zC').onkeydown=e=>e.key==='Enter'&&unlock();
-$('#aP').onclick=()=>{st.an=$('#aT').value.trim().slice(0,200);save();banner();toast(st.an?'Anuncio publicado':'Anuncio quitado');close()};
-$('#aQ').onclick=()=>{$('#aT').value='';$('#aP').click()};
-apply();coins();banner();
-
-/* ===== v3: global, dueño, canje, calificaciones, ojo ===== */
-const DB='',FBKEY='';  // ← URL de tu Firebase Realtime Database: con ella anuncio, calificaciones y códigos son GLOBALES. Vacío = solo en este dispositivo
-const BANCO={banco:'Alias',titular:'',id:'4117609'},WA='';  // WA: tu número con código de país, sin +
-const PK=[[500,''],[1500,''],[5000,''],[10000,''],[50000,'']];  // [monedas, precio en texto]
-const SEC='rl-k9Q2xV7',AL='0123456789ABCDEFGHIJKLMNOPQRSTUV';
-const G={async get(k){try{if(DB)return await(await fetch(`${DB}/${k}.json`+AU())).json();return JSON.parse(localStorage.getItem('g_'+k))}catch{return null}},
- async set(k,v){try{if(DB){const r=await fetch(`${DB}/${k}.json`+AU(),{method:'PUT',body:JSON.stringify(v)});return r.ok}else{localStorage.setItem('g_'+k,JSON.stringify(v));return true}}catch{return false}}};
+/* ===== datos solo de este dispositivo ===== */
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-st.id=st.id||Math.random().toString(36).slice(2,10);st.nick=st.nick||'Jugador '+st.id.slice(0,4).toUpperCase();
-st.sec=st.sec||0;st.spins=st.spins||0;st.used=st.used||{};st.hide=st.hide||['cp','ck','bR','bT','bt','bS','bM','bJ','bU','bQ','bE'];
-
+const PKEY='ruleta_perfil';let prof=null,UPH='',AC,lk,lt2=0;try{prof=JSON.parse(localStorage.getItem(PKEY))}catch{}
+['ruleta_owner_token','ses'].forEach(k=>{try{localStorage.removeItem(k)}catch{}});['owner','used','an','id'].forEach(k=>delete st[k]);
+st.nick=prof?prof.n:(st.nick||'Jugador');st.sec=st.sec||0;st.spins=st.spins||0;
+st.hide=(st.hide||['cp','ck','bT','bt','bS','bM','bU','bE']).filter(id=>document.getElementById(id));
 /* skins, fondos y decoraciones nuevas */
 WS[9][2]='hw';WS[19][1]=6500;
 WS.push(['Obsidiana',1500,['#0b0b0f','#1f2937','#111827','#374151'],'#e5e7eb'],['Mármol',2000,['#f3f4f6','#d1d5db','#e5e7eb','#9ca3af'],'#9ca3af'],['Plata',3000,['#e5e7eb','#9ca3af','#d1d5db','#6b7280'],'#f9fafb'],['Ajedrez',3500,['#ffffff','#0b0b0f'],'#9ca3af'],['Humo',4000,['#2b2b32','#4b5563','#1f2937','#6b7280'],'#9ca3af'],['Aurora',5500,['#22d3ee','#a78bfa','#34d399','#6366f1'],'#a5f3fc'],['Dragón',7500,['#7f1d1d','#f59e0b','#111111','#b45309'],'#fbbf24'],['Arcoíris vivo',10000,'ra','#ffffff']);
@@ -462,195 +510,196 @@ function rain(n){const t=$('#cp').getBoundingClientRect(),tx=t.left+30,ty=t.top+
   document.body.append(s);setTimeout(()=>s.remove(),2800)}
  $('#cp').animate([{transform:'scale(1)'},{transform:'scale(1.2)'},{transform:'scale(1)'}],{duration:500,delay:900})}
 const tm=()=>$('#cT').textContent='0:'+String(st.sec%60).padStart(2,'0');tm();
-setInterval(()=>{if(document.hidden)return;st.sec++;tm();
- if(st.sec%60===0){st.coins+=50;coins();rain(50)}
- if(st.sec%10===0)save();if(DB&&st.sec%30===0)G.set('u/'+st.id,me());
- if(cur&&cur.id==='sL')lbTick()},1000);
-const _spin=spin;spin=()=>{if(busy||!items.length)return;if(DB&&!UID){toast('Inicia sesión para girar');return openU()}st.spins++;save();return _spin()};
-
-/* calificaciones (se actualizan cada 5 minutos) */
-let snap=null,snapW=0,lbK='c';
-const me=()=>({n:st.nick,c:st.coins,t:st.sec,g:st.spins});
-function fT(s){const d=s/86400|0,y=d/365|0;return y?`${y} a ${d%365} d`:d?`${d} d ${s%86400/3600|0} h`:s>=3600?`${s/3600|0} h ${s%3600/60|0} m`:`${s/60|0} m ${s%60} s`}
-async function lb(){const w=Date.now()/3e5|0;
- if(!snap||w!==snapW){snapW=w;const u=(DB&&await G.get('u'))||{};u[st.id]=me();snap=Object.values(u)}
- const a=[...snap].sort((x,y)=>(y[lbK]||0)-(x[lbK]||0)).slice(0,20);
- $('#lS').textContent=`Tú: ⏱ ${fT(st.sec)} · 🎡 ${st.spins} giros · 🪙 ${fmt(st.coins)}`;
- $('#lL').innerHTML=a.map((u,i)=>`<div class="in"><b>${i+1}</b><span style="flex:1">${esc(u.n||'?')}</span><b>${lbK==='t'?fT(u.t||0):fmt(u[lbK]||0)}</b></div>`).join('');lbTick()}
-function lbTick(){const r=3e5-Date.now()%3e5;$('#lU').textContent=`Se actualiza en ${r/6e4|0}:${String(r/1e3%60|0).padStart(2,'0')}`;if((Date.now()/3e5|0)!==snapW)lb()}
-document.querySelectorAll('#lT button').forEach(b=>b.onclick=()=>{lbK=b.dataset.k;document.querySelectorAll('#lT button').forEach(x=>x.classList.toggle('on',x===b));lb()});
-$('#bR').onclick=()=>{open('#sL');DB&&G.set('u/'+st.id,me());lb()};
-
-/* paquetes → transferencia → WhatsApp; canje; códigos del dueño */
-function packs(){const g=$('#pk');g.innerHTML='';
- PK.forEach(([n,pr])=>{const d=document.createElement('div'),b=document.createElement('button');d.className='it';
-  d.innerHTML=`<div style="font-size:26px">${CI}</div><b>${fmt(n)}</b><small class="lb">${esc(pr||'monedas')}</small>`;
-  b.textContent=st.owner?'Obtener gratis':'Comprar';
-  b.onclick=()=>st.owner?(st.coins+=n,coins(),toast('+'+fmt(n)+' monedas 🪙')):pay(n,pr);d.append(b);
-  if(st.owner){const q=document.createElement('button');q.className='u';q.textContent='Generar código';q.onclick=()=>gen(n);d.append(q)}
-  g.append(d)})}
-const pj=document.createElement('button');pj.className='sm';pj.textContent='🎁 Canje de regalo';pj.onclick=()=>open('#sJ');$('#sK').append(pj);const cc=document.createElement('button');cc.id='cc';cc.className='sm';cc.textContent='🧾 Crear código de canje';cc.hidden=!st.owner;cc.onclick=mk;$('#sK').append(cc);
-function pay(n,pr){const t=$('#tB');$('#tH').textContent='Transferencia';
- t.innerHTML=`<div style="font-size:20px">${CI} <b>${fmt(n)}</b> monedas${pr?' · '+esc(pr):''}</div><div class="in" style="border-color:#ffc83d;background:#ffc83d1f;line-height:1.4">⚠️ <b>Importante:</b> guarda siempre tu <b>comprobante</b> de la transferencia y envíalo por <b>WhatsApp</b>. Si no lo envías, no se acredita nada y no funciona.</div><div class="lb">Toca un dato para copiarlo</div>`+
- [['Banco',BANCO.banco],['Nombre',BANCO.titular],['Número de transferencia',BANCO.id]].filter(r=>r[1]).map(([a,b])=>`<div class="in cp2" data-c="${esc(b)}" style="display:flex;justify-content:space-between;gap:8px;cursor:pointer"><span class="lb">${a}</span><b>${esc(b)}</b></div>`).join('')+
- `<label class="ch" style="border-radius:14px;line-height:1.35"><input type="checkbox" id="tK">Ya tengo mi comprobante y lo voy a enviar por WhatsApp</label><button class="ok2" id="tD" disabled>Ya hice la transferencia</button>`;$('#tK').onchange=()=>$('#tD').disabled=!$('#tK').checked;
- t.querySelectorAll('.cp2').forEach(e=>e.onclick=()=>{try{navigator.clipboard.writeText(e.dataset.c)}catch{}toast('Copiado')});
- $('#tD').onclick=()=>{$('#tH').textContent='Último paso';
-  t.innerHTML=`<p>Te vamos a llevar a WhatsApp. <b>Adjunta la foto de tu comprobante</b> y envía el mensaje: sin comprobante no funciona y no podemos mandarte tu código de canje.</p><button class="ok2" id="tW">Ir a WhatsApp</button>`;
-  $('#tW').onclick=()=>!WA?toast('Falta poner el número de WhatsApp (WA) en el código'):window.open(`https://wa.me/${WA}?text=`+encodeURIComponent(`Hola, hice la transferencia del paquete de ${fmt(n)} monedas. Mi ID: ${st.id}. Te envío el comprobante.`),'_blank')};
- open('#sQ')}
-function mac(s){let o='';for(let i=0;o.length<19;i++)o+=hs('k'+i+'|'+SEC+'|'+s).toString(32).toUpperCase();return o.slice(0,19)}
-function gen(n){let r='';crypto.getRandomValues(new Uint8Array(40)).forEach(v=>r+=AL[v&31]);
- const p=n.toString(32).toUpperCase().padStart(5,'0'),code=p+r+mac(p+r);
- $('#tH').textContent='Código de '+fmt(n)+' monedas';
- $('#tB').innerHTML=`<div class="in" style="word-break:break-all;font-family:monospace;font-size:14px">${code}</div><button class="ok2" id="tC">Copiar código</button><div class="lb">De un solo uso. Envíaselo a quien hizo la transferencia.</div>`;
- $('#tC').onclick=()=>{try{navigator.clipboard.writeText(code)}catch{}toast('Código copiado')};open('#sQ')}
-$('#bJ').onclick=()=>{$('#jR').textContent='';open('#sJ')};
-$('#jK').onclick=async()=>{const v=$('#jC').value.trim().toUpperCase().replace(/[^0-9A-V]/g,''),R=$('#jR'),p=v.slice(0,5),r=v.slice(5,45);
- if(v.length!==64||mac(p+r)!==v.slice(45))return R.textContent='❌ Código inválido';
- const k=''+hs(v);if(st.used[k]||(DB&&await G.get('used/'+r)))return R.textContent='❌ Este código ya fue usado';
- const n=parseInt(p,32);st.used[k]=1;DB&&G.set('used/'+r,1);st.coins+=n;coins();$('#jC').value='';
- R.textContent=`✅ Código ejecutado con éxito · +${fmt(n)} monedas`;rain(n)};
-
-/* dueño: código, anuncio global, Halloween */
-function ownerUI(){$('#bA').hidden=!st.owner;packs();const c=$('#cc');c&&(c.hidden=!st.owner)}
-function unlock(){const z=$('#zC');
- if(hs('rl|'+z.value.trim().toUpperCase())===CH){if(DB&&UID)G.set('owners/'+UID,z.value.trim().toUpperCase());z.value='';st.owner=1;save();ownerUI();close();toast('Modo dueño activado 👑')}
- else{toast('Código incorrecto');z.classList.remove('shk');void z.offsetWidth;z.classList.add('shk')}}
-$('#hz').onclick=()=>open(st.owner?'#sY':'#sZ');$('#bA').onclick=()=>open('#sY');
-async function shrink(f,m){const u=URL.createObjectURL(f),im=new Image();im.src=u;try{await im.decode()}finally{URL.revokeObjectURL(u)}
- const k=Math.min(1,m/Math.max(im.naturalWidth,im.naturalHeight)),c=document.createElement('canvas');c.width=im.naturalWidth*k;c.height=im.naturalHeight*k;
- c.getContext('2d').drawImage(im,0,0,c.width,c.height);return c.toDataURL('image/jpeg',.72)}
-let aImg=null,HW=true;
-$('#aF').onclick=()=>$('#aI').click();
-$('#aI').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
- if(!(OK.test(f.type)||(!f.type&&EXT.test(f.name))))return toast('Solo se permiten fotos');
- try{aImg=await shrink(f,900);$('#aN').textContent='✅ foto lista'}catch{toast('No pude leer esa foto')}};
-$('#aP').onclick=async()=>{const t=$('#aT').value.trim();if(!t&&!aImg)return toast('Pon un texto o una foto');
- await G.set('an',{t,i:aImg,id:Date.now()});toast('Anuncio publicado');close()};
-$('#aQ').onclick=async()=>{await G.set('an',null);aImg=null;$('#aT').value='';$('#aN').textContent='';toast('Anuncio quitado')};
-$('#aS').onclick=()=>{st.owner=0;save();ownerUI();close();toast('Modo dueño desactivado')};
-const hwBtn=()=>$('#aH').textContent=HW?'Quitar ruleta Halloween (para todos)':'Poner ruleta Halloween';
-$('#aH').onclick=async()=>{HW=!HW;await G.set('hw',HW);if(!HW&&st.rs===9)st.rs=0;save();apply();hwBtn()};
-G.get('hw').then(v=>{HW=v!==false;if(!HW&&st.rs===9){st.rs=0;save();apply()}hwBtn()});
-const _l2=list2;list2=()=>_l2().filter(r=>HW||r[0]!=='r9');
-async function showAn(){const a=await G.get('an');if(!a||(!a.t&&!a.i))return;
- $('#ni').hidden=!a.i;if(a.i)$('#ni').src=a.i;$('#nt').hidden=!a.t;$('#nt').textContent=a.t||'';$('#nv').classList.add('on')}
-$('#nk').onclick=()=>$('#nv').classList.remove('on');
-$('#ld').addEventListener('transitionend',()=>setTimeout(showAn,300),{once:true});
-
-/* ===== v4: cuentas, nube pública, regalos, códigos con usos, efectos ===== */
-var TK='',UID='',RT='',RN='',UPH='',md='in',syT,avT,qT,AC,lk,lt2=0;
-const IT='https://identitytoolkit.googleapis.com/v1/accounts:',em=n=>n.toLowerCase()+'@ruleta.app',
-AX=async(u,b)=>{try{return await(await fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)})).json()}catch{return{error:{message:'RED'}}}},
-pic=(p,z)=>p?`<img src="${esc(p)}" width="${z}" height="${z}" style="border-radius:50%;object-fit:cover">`:`<span style="font-size:${z*.7}px">👤</span>`;
-function AU(){return TK?'?auth='+TK:''}
-function sy(){clearTimeout(syT);syT=setTimeout(()=>UID&&G.set('u/'+UID,me()),1500)}
 /* sonido de los puntitos negros + flechita */
 function tick(){try{AC=AC||new(window.AudioContext||webkitAudioContext)();AC.state==='suspended'&&AC.resume();const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime;o.type='triangle';o.frequency.setValueAtTime(950,t);o.frequency.exponentialRampToValueAtTime(280,t+.05);g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.06);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+.07)}catch{}}
 function pegs(a,s){const k=Math.floor(a/s);if(k===lk)return;lk=k;const n=performance.now();if(n-lt2<40)return;lt2=n;tick();$('#pt').animate([{transform:'rotate(-28deg)'},{transform:'rotate(0)'}],{duration:120,easing:'ease-out'})}
 function coinsUp(x,y){for(let i=0;i<20;i++){const s=document.createElement('i');s.className='cf';s.innerHTML=CI;s.style.cssText=`left:${x-12}px;top:${y}px;--x:${(Math.random()-.5)*320}px;--y:${-140-Math.random()*240}px;--r:${(Math.random()-.5)*540}deg;animation-delay:${i*70}ms`;document.body.append(s);setTimeout(()=>s.remove(),3200)}}
-/* códigos globales con límite de usos */
-async function redeem(c){c=c.trim().toUpperCase().replace(/[^0-9A-Z]/g,'');
- if(c.length<30)return'❌ Código inválido';if(DB&&!UID)return'❌ Inicia sesión para canjear';
- const pid=UID||st.id,d=await G.get('codes/'+c);if(!d||!(d.n>0))return'❌ Código inválido';
- const by=d.by||{},full='❌ Este código ya se agotó';if(by[pid])return'❌ Ya canjeaste este código. Solo se puede canjear una vez por persona';if(Object.keys(by).length>=(d.m||1))return full;
- if(DB){if(!(await G.set('codes/'+c+'/by/'+pid,true)))return full;const v=(await G.get('codes/'+c))||{};if(Object.keys(v.by||{}).length>(d.m||1)){await G.set('codes/'+c+'/by/'+pid,null);return full}}else{by[pid]=1;d.by=by;await G.set('codes/'+c,d)}
- st.coins+=d.n;coins();rain(d.n);return`✅ Código ejecutado con éxito · +${fmt(d.n)} monedas`}
-async function gen(n,m=1){if(!(n>0)||!(m>0))return toast('Pon monedas y usos mayores que 0');
- let r='';crypto.getRandomValues(new Uint8Array(64)).forEach(v=>r+=AL[v&31]);
- if(!(await G.set('codes/'+r,{n,m})))return toast('No se pudo crear: entra con tu cuenta y activa el modo dueño');
- $('#tH').textContent='Código de '+fmt(n)+' monedas · '+m+(m>1?' usos':' uso');
- $('#tB').innerHTML=`<div class="in" style="word-break:break-all;font-family:monospace;font-size:14px">${r}</div><button class="ok2" id="tC">Copiar código</button><div class="lb">${DB?'Sirve en cualquier país. Se agota a los '+m+' uso'+(m>1?'s':'')+' y cada persona lo canjea una sola vez.':'⚠️ La nube no está conectada: este código solo funciona en este dispositivo.'}</div>`;
- $('#tC').onclick=()=>{try{navigator.clipboard.writeText(r)}catch{}toast('Código copiado')};open('#sQ')}
-function mk(){$('#tH').textContent='Crear código de canje';
- $('#tB').innerHTML='<div class="lb">¿Cuánta moneda quieres regalar?</div><input class="in" id="mN" type="number" inputmode="numeric" min="1" value="100"><div class="lb">¿Cuántas personas pueden usarlo?</div><input class="in" id="mU" type="number" inputmode="numeric" min="1" value="20"><button class="ok2" id="mG">Crear código</button>';
- $('#mG').onclick=()=>gen(Math.floor(+$('#mN').value),Math.floor(+$('#mU').value));open('#sQ')}
-$('#jK').onclick=async()=>{const R=$('#jR');R.textContent='⏳';R.textContent=await redeem($('#jC').value);$('#jC').value=''};
-/* cuentas */
-function openU(){const b=$('#uB'),up=md==='up';
- if(!DB||!FBKEY){$('#uH').textContent='Cuenta';b.innerHTML='<p class="lb">Falta conectar la nube: pon DB y KEY en el archivo.</p>';return open('#sU2')}
- if(UID){$('#uH').textContent='Mi perfil';
-  b.innerHTML=`<div class="r" style="justify-content:flex-start">${pic(UPH,64)}<div><b>${esc(st.nick)}</b><div class="lb">${esc(RN)}</div></div></div><button class="sm" id="uP">📷 Cambiar foto</button><button class="sm" id="uX">Cerrar sesión</button>`;
-  $('#uP').onclick=()=>$('#uF').click();$('#uX').onclick=()=>{localStorage.removeItem('ses');location.reload()};return open('#sU2')}
- $('#uH').textContent=up?'Crear cuenta':'Iniciar sesión';
- b.innerHTML=(up?'<input class="in" id="rN" placeholder="Nombre real" maxlength="30" autocomplete="off">':'')+
- `<input class="in" id="rU" placeholder="${up?'Nombre que aparecerá en tu perfil':'Nombre de perfil'}" maxlength="16" autocomplete="off"><div class="lb" id="rM"></div><input class="in" id="rP" type="password" placeholder="Contraseña" autocomplete="${up?'new-password':'current-password'}">`+
- (up?'<input class="in" id="rQ" type="password" placeholder="Confirmar contraseña" autocomplete="new-password"><input class="in" id="rG" placeholder="Código de regalo (opcional)" autocomplete="off"><button class="sm" id="rF">🖼️ Foto de perfil (galería)</button>':'')+
- `<button class="ok2" id="rK">${up?'Crear cuenta':'Entrar'}</button><button class="sm" id="rT">${up?'Ya tengo cuenta':'Crear una cuenta'}</button>`;
- $('#rT').onclick=()=>{md=up?'in':'up';openU()};$('#rK').onclick=up?reg:lgn;
- if(up){$('#rF').onclick=()=>$('#uF').click();$('#rU').oninput=()=>{clearTimeout(avT);avT=setTimeout(chk,350)}}
- open('#sU2')}
-async function chk(){const v=$('#rU').value.trim(),m=$('#rM');if(!m)return;
- if(!/^\w{3,16}$/.test(v))return m.textContent='Usa 3 a 16 letras, números o _';
- m.textContent=(await G.get('names/'+v.toLowerCase()))?'❌ Este nombre ya fue usado':'✅ Nombre disponible'}
-async function reg(){const real=$('#rN').value.trim(),nm=$('#rU').value.trim(),p=$('#rP').value,g=$('#rG').value.trim(),M=$('#rM');
- if(!real)return M.textContent='Pon tu nombre real';
- if(!/^\w{3,16}$/.test(nm))return M.textContent='Nombre de perfil: 3 a 16 letras, números o _';
- if(p.length<6)return M.textContent='La contraseña necesita 6 o más caracteres';
- if(p!==$('#rQ').value)return M.textContent='Las contraseñas no coinciden';
- M.textContent='Creando…';
- if(await G.get('names/'+nm.toLowerCase()))return M.textContent='❌ Este nombre ya fue usado';
- const r=await AX(IT+'signUp?key='+FBKEY,{email:em(nm),password:p,returnSecureToken:true});
- if(r.error)return M.textContent=r.error.message==='EMAIL_EXISTS'?'❌ Este nombre ya fue usado':'Error: '+r.error.message;
- TK=r.idToken;UID=r.localId;RT=r.refreshToken;RN=real;
- await G.set('names/'+nm.toLowerCase(),{u:UID,n:nm,p:UPH});await G.set('pf/'+UID,{r:real});
- Object.assign(st,{id:UID,nick:nm,coins:500,sec:0,spins:0,owner:0});
- if(g)toast(await redeem(g));
- coins();ownerUI();await G.set('u/'+UID,me());fin()}
-async function lgn(){const nm=$('#rU').value.trim(),M=$('#rM');if(!nm||!$('#rP').value)return M.textContent='Pon tu nombre y contraseña';M.textContent='Entrando…';
- const r=await AX(IT+'signInWithPassword?key='+FBKEY,{email:em(nm),password:$('#rP').value,returnSecureToken:true});
- if(r.error)return M.textContent='❌ Nombre o contraseña incorrectos';
- TK=r.idToken;UID=r.localId;RT=r.refreshToken;await ldu(nm);fin()}
-async function ldu(nm){const n=(await G.get('names/'+nm.toLowerCase()))||{};st.id=UID;st.nick=n.n||nm;UPH=n.p||'';
- const d=await G.get('u/'+UID);if(d&&d.c!=null)Object.assign(st,{coins:d.c,sec:d.t||0,spins:d.g||0});coins();tm();
- RN=((await G.get('pf/'+UID))||{}).r||''}
-function ses(){try{localStorage.setItem('ses',JSON.stringify({rt:RT,nm:st.nick}))}catch{}}
-function fin(q){ses();save();$('#bU').textContent='👤 '+st.nick;$('#sN').value=st.nick;$('#sN').disabled=true;inbox();if(!q){close();toast('¡Hola, '+st.nick+'!')}}
-async function rf(){try{const r=await(await fetch('https://securetoken.googleapis.com/v1/token?key='+FBKEY,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'grant_type=refresh_token&refresh_token='+encodeURIComponent(RT)})).json();if(!r.id_token)return false;TK=r.id_token;UID=r.user_id;RT=r.refresh_token;return true}catch{return false}}
+
+/* ===== comprar monedas: transferencia + comprobante ===== */
+const BANCO={banco:'Interfisa',cuenta:'4117609',tel:'984 906 724',wa:'595984906724'};
+function packs(){const g=$('#pk');g.innerHTML='';
+ [500,1500,5000,10000,50000].forEach(n=>{const d=document.createElement('div'),b=document.createElement('button');d.className='it';
+  d.innerHTML=`<div style="font-size:26px">${CI}</div><b>${fmt(n)}</b><small class="lb">monedas</small>`;
+  b.textContent='Comprar';b.onclick=()=>pay(n);d.append(b);g.append(d)})}
+function pay(n){const m=encodeURIComponent('Hola, quiero comprar '+fmt(n)+' monedas. Mi perfil: '+st.nick+'. Te envío el comprobante de la transferencia.');
+ $('#tH').textContent='Comprar '+fmt(n)+' monedas';
+ $('#tB').innerHTML=`<div class="lb">1️⃣ Haz la transferencia a esta cuenta</div><div class="in pay"><span>Banco</span><b>${BANCO.banco}</b></div><div class="in pay"><span>N.º de cuenta</span><b>${BANCO.cuenta}</b><button class="sm" id="pC">Copiar</button></div><div class="lb">2️⃣ Envía la captura del comprobante a este número</div><div class="in pay"><span>WhatsApp</span><b>${BANCO.tel}</b></div><div class="in warn">⚠️ <b>Es obligatorio enviar el comprobante.</b> Si no lo envías, las monedas no se acreditan.</div><a class="ok2" id="pW" target="_blank" rel="noopener" href="https://wa.me/${BANCO.wa}?text=${m}">📤 Enviar comprobante por WhatsApp</a>`;
+ $('#pC').onclick=()=>{try{navigator.clipboard.writeText(BANCO.cuenta)}catch{}toast('Número de cuenta copiado')};open('#sQ')}
+
+/* ===== cuenta local obligatoria (se queda en este dispositivo) ===== */
+const PS=()=>{try{localStorage.setItem(PKEY,JSON.stringify(prof))}catch{}},
+hx=async t=>{try{return[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))].map(b=>b.toString(16).padStart(2,'0')).join('')}catch{return''+hs(t)}},
+pic=(p,z)=>p?`<img src="${esc(p)}" width="${z}" height="${z}" style="border-radius:50%;object-fit:cover">`:`<span style="font-size:${z*.7}px">👤</span>`,
+SES=v=>{try{v?localStorage.setItem('ruleta_ses','1'):localStorage.removeItem('ruleta_ses')}catch{}},
+isIn=()=>true;
+function who(){$('#bU').textContent='👤 '+st.nick;$('#sN').value=st.nick;$('#sN').disabled=true}
+function wipe(){try{localStorage.removeItem(PKEY);localStorage.removeItem(KEY);localStorage.removeItem('ruleta_ses')}catch{}location.reload()}
+function gate(){const o=$('#lkz');o&&o.remove();const up=!prof,L=document.createElement('div');L.id='lkz';
+ L.innerHTML=up?`<b style="font-size:22px">Crea tu cuenta</b><div class="lb" style="text-align:center">Es obligatoria para usar la ruleta y se guarda solo en este dispositivo.</div><input class="in" id="rN" placeholder="Nombre real" maxlength="30" autocomplete="off"><input class="in" id="rU" placeholder="Nombre que aparecerá en tu perfil" maxlength="16" autocomplete="off"><input class="in" id="rP" type="password" placeholder="Contraseña (mínimo 6)" autocomplete="new-password"><input class="in" id="rQ" type="password" placeholder="Confirmar contraseña" autocomplete="new-password"><button class="sm" id="rF">🖼️ Foto de perfil (opcional)</button><div class="lb" id="rM"></div><button class="ok2" id="rK">Crear cuenta</button>`
+ :`${pic(prof.p,84)}<b style="font-size:22px">${esc(prof.n)}</b><div class="lb">${esc(prof.r||'')}</div><input class="in" id="lP" type="password" placeholder="Contraseña" autocomplete="current-password"><div class="lb" id="lM"></div><button class="ok2" id="lG">Entrar</button><button class="sm" id="lR">Olvidé mi contraseña</button>`;
+ document.body.append(L);close();requestAnimationFrame(()=>L.classList.add('on'));
+ const done=()=>{SES(1);who();L.classList.remove('on');setTimeout(()=>L.remove(),500);toast('¡Hola, '+st.nick+'!')};
+ if(up){$('#rF').onclick=()=>$('#uF').click();
+  $('#rK').onclick=async()=>{const r=$('#rN').value.trim(),nm=$('#rU').value.trim(),p=$('#rP').value,M=$('#rM');
+   if(!r)return M.textContent='Pon tu nombre real';
+   if(!/^\w{3,16}$/.test(nm))return M.textContent='Nombre de perfil: 3 a 16 letras, números o _';
+   if(p.length<6)return M.textContent='La contraseña necesita 6 o más caracteres';
+   if(p!==$('#rQ').value)return M.textContent='Las contraseñas no coinciden';
+   const sa=Math.random().toString(36).slice(2);prof={n:nm,r,p:UPH,s:sa,h:await hx(sa+p)};PS();st.nick=nm;save();done()}}
+ else{const go1=async()=>{const P=$('#lP');if(await hx(prof.s+P.value)===prof.h)done();else{$('#lM').textContent='❌ Contraseña incorrecta';P.classList.remove('shk');void P.offsetWidth;P.classList.add('shk')}};
+  $('#lG').onclick=go1;$('#lP').onkeydown=e=>e.key==='Enter'&&go1();
+  let c=0;$('#lR').onclick=e=>{if(!c++){e.target.textContent='Esto borra la cuenta y tus datos. Toca otra vez';return}wipe()}}}
+function openU(){$('#uH').textContent='Mi perfil';
+ $('#uB').innerHTML=`<div class="r" style="justify-content:flex-start">${pic(prof.p,64)}<div><b>${esc(st.nick)}</b><div class="lb">${esc(prof.r||'')}</div></div></div><button class="sm" id="uP">📷 Cambiar foto</button><button class="sm" id="uX">Cerrar sesión</button>`;
+ $('#uP').onclick=()=>$('#uF').click();$('#uX').onclick=()=>{SES(0);gate()};open('#sU2')}
+$('#bU').onclick=openU;
 $('#uF').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
  if(!(OK.test(f.type)||(!f.type&&EXT.test(f.name))))return toast('Solo se permiten fotos');
- try{UPH=(await photo(f,64)).toDataURL('image/jpeg',.6);if(UID){await G.set('names/'+st.nick.toLowerCase()+'/p',UPH);openU()}else toast('✅ Foto lista')}catch{toast('No pude leer esa foto')}};
-(async()=>{let s=null;try{s=JSON.parse(localStorage.getItem('ses'))}catch{}
- if(DB&&FBKEY&&s&&s.rt){RT=s.rt;if(await rf()){await ldu(s.nm);fin(1)}}})();
-setInterval(async()=>{if(UID&&await rf())ses()},3e6);setInterval(inbox,2e4);
-/* regalos de moneda */
-async function inbox(){if(!UID)return;const g=await G.get('gifts/'+UID);if(!g||g.error)return;let t=0;
- for(const k in g)if(await G.set('gifts/'+UID+'/'+k,null))t+=g[k].n|0;
- if(t){st.coins+=t;coins();rain(t);toast('🎁 Te regalaron '+fmt(t)+' monedas')}}
-async function qs(){const L=$('#qL'),v=$('#qI').value.trim().toLowerCase();
- if(!DB){L.innerHTML='<p class="lb">Falta conectar la nube (DB).</p>';return}
- let d={};try{d=await(await fetch(`${DB}/names.json?orderBy="$key"&startAt="${v}"&endAt="${v}\uf8ff"&limitToFirst=20`+(TK?'&auth='+TK:''))).json()||{}}catch{}
- const a=d.error?[]:Object.values(d);L.innerHTML=a.length?'':'<p class="lb">No hay nadie con ese nombre</p>';
- a.forEach(u=>{const e=document.createElement('div');e.className='in';e.style.cssText='display:flex;align-items:center;gap:10px;cursor:pointer';
-  e.innerHTML=pic(u.p,38)+`<b>${esc(u.n)}</b>`;e.onclick=()=>gf(u);L.append(e)})}
-function gf(u){const L=$('#qL');
- L.innerHTML=`<div class="r" style="justify-content:flex-start">${pic(u.p,56)}<b style="font-size:18px">${esc(u.n)}</b></div><div class="lb">¿Cuánta moneda quieres regalar? (tienes ${fmt(st.coins)})</div><input class="in" id="gN" type="number" inputmode="numeric" min="1" placeholder="Cantidad"><button class="ok2" id="gK">Regalar moneda</button><button class="sm" id="gB">← Volver</button>`;
- $('#gB').onclick=qs;
- $('#gK').onclick=async()=>{const n=Math.floor(+$('#gN').value);
-  if(!UID){toast('Inicia sesión para regalar');return openU()}
-  if(!(n>0))return toast('Pon una cantidad');if(u.u===UID)return toast('No puedes regalarte a ti mismo');
-  if(n>st.coins)return toast('Moneda insuficiente');
-  const r=await fetch(`${DB}/gifts/${u.u}.json${AU()}`,{method:'POST',body:JSON.stringify({f:st.nick,n})});
-  if(!r.ok)return toast('No se pudo transferir');
-  st.coins-=n;coins();toast('✅ Transferido con éxito: '+fmt(n)+' a '+u.n);gf(u)}}
-let qd;$('#qI').oninput=()=>{clearTimeout(qd);qd=setTimeout(qs,300)};
-$('#bU').onclick=openU;$('#bQ').onclick=()=>{$('#qI').value='';open('#sB');qs()};
+ try{UPH=(await photo(f,96)).toDataURL('image/jpeg',.7);if(prof){prof.p=UPH;PS();openU()}else toast('✅ Foto lista')}catch{toast('No pude leer esa foto')}};
+
+/* monedas: 50 por minuto en la página */
+setInterval(()=>{if(document.hidden||!isIn())return;st.sec++;tm();if(st.sec%60===0){st.coins+=50;coins();rain(50)}if(st.sec%10===0)save()},1000);
+const _spin=spin;spin=async()=>{if(busy||!items.length||!isIn())return;try{await _spin()}finally{busy=false;batt(0);list()}};
 
 /* ojo: ocultar botones, ruleta grande, tocar en cualquier lado para girar */
-const HB=[['cp','Monedas'],['ck','Reloj'],['bR','Calificaciones'],['bT','Tienda'],['bt','Girar'],['bS','Ajustes'],['bM','Más'],['bJ','Canje'],['bU','Perfil'],['bQ','Buscar'],['bE','El ojo']];
+const HB=[['cp','Monedas'],['ck','Reloj'],['bT','Tienda'],['bt','Girar'],['bS','Ajustes'],['bM','Más'],['bU','Perfil'],['bE','El ojo']];
 const EYE=['<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>','<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10c5 6 15 6 20 0M12 16v3M6.5 14.5 5 17M17.5 14.5 19 17"/></svg>'];
 HB.forEach(([id,nm])=>{const l=document.createElement('label');l.className='ch';l.innerHTML=`<input type="checkbox" value="${id}"> ${nm}`;l.firstChild.checked=st.hide.includes(id);$('#eL').append(l)});
 function unclean(){document.body.classList.remove('clean');document.querySelectorAll('.gone,.invis').forEach(e=>e.classList.remove('gone','invis'));$('#bE').innerHTML=EYE[0];draw()}
 $('#eK').onclick=()=>{st.hide=[...$('#eL').querySelectorAll('input:checked')].map(i=>i.value);save();close();
- document.body.classList.add('clean');st.hide.forEach(id=>{if(id!=='bE')$('#'+id).classList.add('gone')});$('#bA').classList.add('gone');
+ document.body.classList.add('clean');st.hide.forEach(id=>{if(id!=='bE')$('#'+id).classList.add('gone')});
  const e=$('#bE');e.innerHTML=EYE[1];if(st.hide.includes('bE'))setTimeout(()=>e.classList.add('invis'),700);draw()};
 $('#bE').onclick=()=>document.body.classList.contains('clean')?unclean():open('#sO');
 document.addEventListener('click',e=>{if(document.body.classList.contains('clean')&&!e.target.closest('button,input,select,textarea,label,.sh,#nv,#hz,#wo,#bd'))spin()});
 
-$('#bE').innerHTML=EYE[0];ownerUI();apply();
+
+/* ===== v3: nube, cuenta opcional, regalos y códigos ===== */
+var acct=null,OWN=null,syncT=0;
+try{acct=JSON.parse(localStorage.getItem('ruleta_acct'));OWN=localStorage.getItem('ruleta_ok')}catch{}
+const AS=()=>{try{acct?localStorage.setItem('ruleta_acct',JSON.stringify(acct)):localStorage.removeItem('ruleta_acct')}catch{}},
+pk=()=>({...st,items:items.map(i=>({id:i.id,name:i.name}))}),
+need=m=>gate(m||'Para esto necesitas una cuenta (es gratis).');
+async function api(a,o){let r,j;try{r=await fetch('/api',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({a,...o})});j=await r.json()}catch{throw Error('Sin conexión')}
+ if(!r.ok)throw Error(j.e||'Error');return j}
+async function sync(){if(!acct)return;
+ try{const r=await api('save',{n:acct.n,k:acct.k,d:pk(),p:acct.p});if(r.g){st.coins+=r.g;coins();toast('🎁 Recibiste '+fmt(r.g)+' monedas')}}
+ catch(e){if(e.message==='Sesión inválida'){acct=null;AS();who();toast('Tu sesión venció, entra otra vez')}}}
+function push(){if(!acct||syncT)return;syncT=setTimeout(()=>{syncT=0;document.hidden||sync()},45000)}
+function flush(){clearTimeout(syncT);syncT=0;return sync()}
+document.addEventListener('visibilitychange',()=>document.hidden&&flush());
+function adopt(d){if(!d||d.coins===undefined)return;const it=d.items;delete d.items;
+ Object.assign(st,{coins:500,own:{},rs:0,bg:0,dc:'',ph:'',keep:false},d);st.nick=acct.n;
+ if(Array.isArray(it)){items=it.map(i=>({id:i.id,name:i.name}));uid=Math.max(uid,...items.map(i=>i.id|0))}
+ PH=null;if(st.ph){const im=new Image();im.onload=()=>{PH=im;draw()};im.src=st.ph}
+ $('#kp').value=st.keep?1:0;apply();coins();list();draw()}
+async function boot(){if(!acct)return;
+ try{const j=await api('me',{n:acct.n,k:acct.k});if(j.p)acct.p=j.p;AS();adopt(j.d);who()}
+ catch(e){if(e.message==='Sesión inválida'){acct=null;AS();who()}}}
+function who(){$('#bU').textContent=acct?'👤 '+acct.n:'👤 Entrar';if(acct)st.nick=acct.n;$('#sN').value=st.nick;$('#sN').disabled=!!acct}
+function gate(msg,mode){const o=$('#lkz');o&&o.remove();const reg=(mode||'u')==='u',L=document.createElement('div');L.id='lkz';
+ L.innerHTML=`<button class="x" id="gX" style="position:absolute;top:14px;right:14px">✕</button><b style="font-size:22px">${reg?'Crea tu cuenta':'Iniciar sesión'}</b><div class="lb" style="text-align:center;max-width:320px">${msg||'Guarda tus monedas y skins en la nube y entra desde cualquier celular.'}</div>`
+ +(reg?'<input class="in" id="rN" placeholder="Nombre real (privado)" maxlength="30" autocomplete="off">':'')
+ +`<input class="in" id="rU" placeholder="${reg?'Nombre que verán todos en tu perfil':'Tu nombre de perfil'}" maxlength="16" autocomplete="${reg?'off':'username'}"><input class="in" id="rP" type="password" placeholder="Contraseña (mínimo 6)" autocomplete="${reg?'new':'current'}-password">`
+ +(reg?'<input class="in" id="rQ" type="password" placeholder="Confirmar contraseña" autocomplete="new-password"><button class="sm" id="rF">🖼️ Foto de perfil (opcional)</button>':'')
+ +`<div class="lb" id="rM"></div><button class="ok2" id="rK">${reg?'Crear cuenta':'Entrar'}</button><button class="sm" id="rS">${reg?'Ya tengo cuenta':'Crear cuenta nueva'}</button>`;
+ document.body.append(L);close();requestAnimationFrame(()=>L.classList.add('on'));
+ const end=()=>{L.classList.remove('on');setTimeout(()=>L.remove(),500)};
+ $('#gX').onclick=end;$('#rS').onclick=()=>gate(msg,reg?'i':'u');reg&&($('#rF').onclick=()=>$('#uF').click());
+ $('#rK').onclick=async()=>{const M=$('#rM'),nm=$('#rU').value.trim(),p=$('#rP').value,r=reg?$('#rN').value.trim():'';
+  if(reg&&!r)return M.textContent='Pon tu nombre real';
+  if(!/^\w{3,16}$/.test(nm))return M.textContent='Nombre de perfil: 3 a 16 letras, números o _';
+  if(p.length<6)return M.textContent='La contraseña necesita 6 o más caracteres';
+  if(reg&&p!==$('#rQ').value)return M.textContent='Las contraseñas no coinciden';
+  $('#rK').disabled=true;M.textContent='Conectando…';
+  try{const j=await api(reg?'reg':'login',reg?{n:nm,r,pw:p,p:UPH,d:pk()}:{n:nm,pw:p});
+   acct={n:j.n,k:j.k,p:j.p||'',r:j.r||''};AS();reg||adopt(j.d);who();end();toast('¡Hola, '+acct.n+'!')}
+  catch(e){M.textContent='❌ '+e.message;$('#rK').disabled=false}}}
+function openU(){if(!acct)return gate();$('#uH').textContent='Mi perfil';
+ $('#uB').innerHTML=`<div class="r" style="justify-content:flex-start">${pic(acct.p,64)}<div><b>${esc(acct.n)}</b><div class="lb">${esc(acct.r||'')}</div></div></div><button class="sm" id="uP">📷 Cambiar foto</button><button class="sm" id="uX">Cerrar sesión</button>`;
+ $('#uP').onclick=()=>$('#uF').click();$('#uX').onclick=()=>{flush();acct=null;AS();who();close();toast('Sesión cerrada')};open('#sU2')}
+$('#uF').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
+ if(!(OK.test(f.type)||(!f.type&&EXT.test(f.name))))return toast('Solo se permiten fotos');
+ try{UPH=(await photo(f,96)).toDataURL('image/jpeg',.7);if(acct){acct.p=UPH;AS();flush();openU()}else toast('✅ Foto lista')}catch{toast('No pude leer esa foto')}};
+
+/* mantener / normal */
+$('#kp').value=st.keep?1:0;$('#kp').onchange=()=>{st.keep=$('#kp').value==='1';save()};
+
+/* buscar y regalar */
+let sqt;
+async function bs(){const L=$('#bl');L.innerHTML='<div class="lb">Buscando…</div>';
+ try{const j=await api('find',{q:$('#bq').value});L.innerHTML=j.u.length?'':'<div class="lb">No hay nadie con ese nombre</div>';
+  j.u.forEach(u=>{const b=document.createElement('button');b.className='sm';b.style.cssText='display:flex;align-items:center;gap:10px;text-align:left';b.innerHTML=pic(u.p,34)+'<b>'+esc(u.n)+'</b>';b.onclick=()=>pick(u.n);L.append(b)})}
+ catch(e){L.innerHTML='<div class="lb">'+esc(e.message)+'</div>'}}
+function pick(n){$('#bl').innerHTML=`<div class="lb">Regalar monedas a</div><b style="font-size:20px">${esc(n)}</b><div class="lb">Tienes ${fmt(st.coins)} monedas</div><input class="in" id="ga" type="number" inputmode="numeric" min="1" placeholder="Cantidad a regalar"><div class="lb" id="gm"></div><button class="ok2" id="gb">🎁 Regalar</button><button class="sm" id="gc">← Volver a la lista</button>`;
+ $('#gc').onclick=bs;
+ $('#gb').onclick=async()=>{const a=Math.floor(+$('#ga').value),M=$('#gm');
+  if(!acct)return need('Para regalar monedas necesitas una cuenta (es gratis).');
+  if(!(a>=1))return M.textContent='Pon una cantidad válida';
+  if(a>st.coins)return M.textContent='❌ No te alcanzan las monedas';
+  $('#gb').disabled=true;M.textContent='Enviando…';
+  try{await flush();const j=await api('gift',{n:acct.n,k:acct.k,to:n,amt:a});st.coins=j.c;coins();toast('🎁 Regalaste '+fmt(a)+' a '+n);bs()}
+  catch(e){M.textContent='❌ '+e.message;$('#gb').disabled=false}}}
+$('#bq').oninput=()=>{clearTimeout(sqt);sqt=setTimeout(bs,300)};
+$('#bB').onclick=()=>{open('#sB');bs()};
+
+/* paquetes: dueño = gratis / crear código; todos = canjear código */
+function packs(){const g=$('#pk');g.innerHTML='';
+ [500,1500,5000,10000,50000].forEach(n=>{const d=document.createElement('div');d.className='it';
+  d.innerHTML=`<div style="font-size:26px">${CI}</div><b>${fmt(n)}</b><small class="lb">monedas</small>`;
+  const add=(t,f)=>{const b=document.createElement('button');b.textContent=t;b.onclick=f;d.append(b)};
+  if(OWN){add('Agarrar gratis',()=>{st.coins+=n;coins();rain(n);flush()});add('Crear código',()=>mk(n))}else add('Comprar',()=>pay(n));
+  g.append(d)})}
+async function mk(n){try{const j=await api('mk',{key:OWN,v:n}),m=encodeURIComponent('🎁 Tu código de regalo de '+fmt(n)+' monedas:\n'+j.code+'\n\nCanjéalo en la ruleta: Monedas (＋) → Canjear código de regalo. Es de un solo uso.');
+ $('#tH').textContent='Código creado';
+ $('#tB').innerHTML=`<div class="lb">Ya se guardó en la nube. Sirve una sola vez (${fmt(n)} monedas).</div><div class="in" style="font-size:18px;letter-spacing:1px;text-align:center;word-break:break-all;user-select:all"><b>${j.code}</b></div><button class="sm" id="mC">Copiar código</button><a class="ok2" target="_blank" rel="noopener" href="https://wa.me/?text=${m}">📤 Enviar por WhatsApp</a>`;
+ $('#mC').onclick=()=>{try{navigator.clipboard.writeText(j.code)}catch{}toast('Código copiado')};open('#sQ')}catch(e){toast(e.message)}}
+$('#rB').onclick=()=>{if(!acct)return need('Inicia sesión para canjear tu código.');
+ $('#tH').textContent='Canjear código';
+ $('#tB').innerHTML='<div class="lb">Pega aquí el código que te enviaron</div><input class="in" id="cc" placeholder="XXXX-XXXX-XXXX-XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters"><div class="lb" id="cm"></div><button class="ok2" id="cb">Canjear</button>';
+ $('#cb').onclick=async()=>{const M=$('#cm');M.textContent='Verificando…';
+  try{await flush();const j=await api('use',{n:acct.n,k:acct.k,code:$('#cc').value});st.coins=j.c;coins();M.innerHTML='🎉 ¡Canjeado! Recibiste <b>'+fmt(j.v)+'</b> monedas';$('#cb').hidden=true;rain(j.v)}
+  catch(e){M.textContent='❌ '+e.message}};open('#sQ')};
+/* botón invisible (esquina inferior derecha): modo dueño */
+$('#hz').onclick=()=>{$('#tH').textContent='🔑 Dueño';
+ $('#tB').innerHTML=OWN?'<div class="lb">Modo dueño activo ✓</div><button class="sm" id="oX">Desactivar</button>':'<input class="in" id="oK" type="password" placeholder="Código de dueño" autocomplete="off"><div class="lb" id="oM"></div><button class="ok2" id="oB">Activar</button>';
+ if(OWN)$('#oX').onclick=()=>{OWN=null;try{localStorage.removeItem('ruleta_ok')}catch{}close();toast('Modo dueño desactivado')};
+ else $('#oB').onclick=async()=>{try{const k=$('#oK').value;await api('own',{key:k});OWN=k;try{localStorage.setItem('ruleta_ok',k)}catch{}close();toast('Modo dueño activado')}catch(e){$('#oM').textContent='❌ '+e.message}};
+ open('#sQ')};
+
+/* fondos que se mueven + fondos nuevos + aros de luz nuevos */
+const BGA=new Set([1,2,8,9,14,15,25,26,27,28,29,30]),b0=BG.length;
+BG.push(['Fluido violeta',2400,270,330],['Fluido océano',2800,190,260],['Fluido fuego',3200,15,50],['Fluido selva',3600,140,190],['Fluido rosa',4000,330,20],['Fluido neón',4400,170,300]);
+for(let i=0;i<6;i++)BGA.add(b0+i);BGA.forEach(i=>BG[i][0]+=' ✨');
+DC.push(['l1','Luz cálida',9000,'#fff3b0,#ffb74d,#fff3b0,#ffb74d'],['l2','Luz fría',9000,'#e1f5fe,#4dd0e1,#e1f5fe,#4dd0e1'],['l3','Atardecer',13000,'#ff7043,#ffca28,#ec407a,#ff7043'],['l4','Océano',13000,'#00bcd4,#1565c0,#80deea,#00bcd4'],['l5','Bosque',13000,'#66bb6a,#1b5e20,#c5e1a5,#66bb6a'],['l6','Rosa neón',15000,'#ff4081,#ffffff,#ff4081,#f50057'],['l7','Estrellas',16000,'#fff,#7c4dff,#fff,#18ffff,#fff'],['l8','Fiesta',17000,'red,yellow,lime,cyan,magenta,red'],['l9','Aurora boreal',18000,'#00e676,#00b0ff,#d500f9,#00e676'],['l10','Brasas',19000,'#bf360c,#ff6f00,#ffd600,#bf360c'],['l11','Relámpago',21000,'#ffffff,#40c4ff,#ffffff,#ffff00'],['l12','Cristal',24000,'#e0f7fa,#b388ff,#e0f7fa,#80d8ff']);
+const mvg=(a,b)=>typeof a==='string'?a:`radial-gradient(60% 55% at 20% 25%,hsl(${a} 70% 38%),#0000),radial-gradient(60% 55% at 80% 35%,hsl(${b} 70% 36%),#0000),radial-gradient(70% 60% at 50% 90%,hsl(${(a+b)/2} 65% 30%),#0000),hsl(${a} 45% 8%)`;
+
+/* flecha y centro: 20 colores + 20 decoraciones cada uno */
+const sp2=s=>s.split(';').map(x=>x.split(',')),
+PCOL=sp2('Oro,#ffc83d;Rojo,#ef4444;Naranja,#f97316;Amarillo,#facc15;Lima,#a3e635;Verde,#22c55e;Menta,#34d399;Turquesa,#14b8a6;Cian,#22d3ee;Celeste,#38bdf8;Azul,#3b82f6;Índigo,#6366f1;Violeta,#8b5cf6;Magenta,#d946ef;Rosa,#ec4899;Coral,#fb7185;Blanco,#f8fafc;Plata,#cbd5e1;Negro,#111827;Cobre,#c2763a'),
+PDEC=sp2('Brillo oro,#ffd23f,#fff,;Brillo rojo,#ff3b3b,#fff,;Brillo azul,#3b9bff,#fff,;Brillo verde,#34e27a,#fff,;Brillo rosa,#ff4dac,#fff,;Borde negro,#000,#000,;Borde oro,#ffd23f,#ffd23f,;Neón cian,#00f0ff,#00f0ff,;Corona,#ffd23f,#fff,👑;Estrella,#ffe066,#fff,⭐;Fuego,#ff6a00,#fff,🔥;Corazón,#ff4d8d,#fff,❤️;Diamante,#8fd3ff,#fff,💎;Rayo,#fff176,#fff,⚡;Luna,#c7d2fe,#fff,🌙;Mariposa,#f0abfc,#fff,🦋;Calavera,#ff7a00,#fff,💀;Flor,#fbcfe8,#fff,🌸;Cohete,#7dd3fc,#fff,🚀;Arcoíris,#ff00e5,#00f0ff,🌈'),
+HDEC=sp2('Estrella,#ffd23f,⭐;Corazón,#ff4d8d,❤️;Fuego,#ff6a00,🔥;Corona,#ffd23f,👑;Diamante,#8fd3ff,💎;Rayo,#fff176,⚡;Luna,#c7d2fe,🌙;Sol,#ffb300,☀️;Trébol,#34e27a,🍀;Calavera,#ff7a00,💀;Mariposa,#f0abfc,🦋;Flor,#fbcfe8,🌸;Copo,#bae6fd,❄️;Ojo,#a78bfa,👁️;Moneda,#ffd23f,🪙;Fantasma,#e5e7eb,👻;Cohete,#7dd3fc,🚀;Dado,#f8fafc,🎲;Gema,#f43f5e,♦️;Arcoíris,#00f0ff,🌈');
+function xl(){const f=tab==='p'?'p':'h',D=f==='p'?PDEC:HDEC,e=f==='p'?3:2;
+ return PCOL.map((c,i)=>[f+'c'+i,c[0],i?200+i*100:0,c[1],st[f+'c']===i,f+'c'+i]).concat(D.map((d,i)=>[f+'d'+i,(d[e]?d[e]+' ':'')+d[0],800+i*400,`radial-gradient(circle,${d[1]},#171335 75%)`,st[f+'d']===i,f+'d'+i]))}
+function deco(){const pt=$('#pt'),pa=pt.firstElementChild,hb=$('#hb'),pc=PCOL[st.pc]||PCOL[0],pd=PDEC[st.pd],hc=PCOL[st.hc],hd=HDEC[st.hd];
+ pa.setAttribute('fill',pc[1]);pa.setAttribute('stroke',pd?pd[2]:'#fff');
+ pt.style.filter=(pd?`drop-shadow(0 0 7px ${pd[1]}) `:'')+'drop-shadow(0 3px 5px #000a)';
+ $('#pe').textContent=pd?pd[3]:'';
+ hb.style.background=hc?`radial-gradient(circle at 35% 30%,#fff,${hc[1]} 45%,color-mix(in srgb,${hc[1]},#000 45%))`:'';
+ hb.style.boxShadow=hd?`0 0 0 5px ${hd[1]},0 0 24px ${hd[1]}`:'';
+ hb.style.setProperty('--he',hd?`"${hd[2]}"`:'""')}
+function apply(){const w=$('#wb'),k=st.rs,sk=k==='f'?[]:WS[k],v=st.bg==='v',B=v?null:BG[st.bg],b=$('#bgv'),d=DC.find(x=>x[0]===st.dc),A=$('#bga'),mv=!!(B&&BGA.has(st.bg));
+ w.classList.toggle('dc',!!d);d&&w.style.setProperty('--ring',`conic-gradient(${d[3]})`);
+ w.classList.toggle('hw',sk[2]==='hw');wh.classList.toggle('anim',sk[2]==='ra'&&!st.rm);
+ document.body.classList.toggle('lt',!!(B&&B[4]));
+ b.style.display=v?'block':'none';v?b.play().catch(()=>{}):b.pause();
+ A.hidden=!mv;if(mv)A.style.background=mvg(B[2],B[3]);
+ document.documentElement.style.background=v?'#000':mv?(typeof B[2]==='string'?'#0a0818':`hsl(${B[2]} 45% 8%)`):bgc(B[2],B[3]);
+ deco();draw()}
+
+$('#bE').innerHTML=EYE[0];apply();
 
 $('#go').onclick=spin;
-addEventListener('resize',()=>{draw();size()});
+let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{draw();size()},150)});
 draw();list();size();
+coins();who();boot();
 </script></body></html>
